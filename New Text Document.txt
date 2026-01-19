@@ -1,7 +1,0 @@
-node_modules/
-dist/
-*.pbiviz
-*.pfx
-*.pem
-.cache/
-.vscode/
