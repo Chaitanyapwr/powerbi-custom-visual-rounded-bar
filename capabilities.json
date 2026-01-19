@@ -1,0 +1,103 @@
+{
+  "privileges": [],
+  "dataRoles": [
+    {
+      "name": "category",
+      "kind": "Grouping",
+      "displayName": "Category"
+    },
+    {
+      "name": "actual",
+      "kind": "Measure",
+      "displayName": "Actual Revenue"
+    },
+    {
+      "name": "target",
+      "kind": "Measure",
+      "displayName": "Target Revenue"
+    },
+    {
+      "name": "colorHex",
+      "kind": "Measure",
+      "displayName": "ColorHex"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "for": { "in": "category" }
+        },
+        "values": {
+          "select": [
+            { "bind": { "to": "actual" } },
+            { "bind": { "to": "target" } },
+            { "bind": { "to": "colorHex" } }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "barSettings": {
+      "displayName": "Bar Settings",
+      "properties": {
+        "barRadius": {
+          "displayName": "Column Radius",
+          "type": { "numeric": true }
+        }
+      }
+    },
+    "conditionalFormatting": {
+      "displayName": "Conditional Formatting",
+      "properties": {
+        "mode": {
+          "displayName": "Color Mode",
+          "type": {
+            "enumeration": [
+              { "value": "rule", "displayName": "Rule-based" },
+              { "value": "field", "displayName": "Field-based (ColorHex)" }
+            ]
+          }
+        },
+        "threshold1": {
+          "displayName": "Threshold 1",
+          "type": { "numeric": true }
+        },
+        "threshold2": {
+          "displayName": "Threshold 2",
+          "type": { "numeric": true }
+        },
+        "naColor": {
+          "displayName": "N/A Color",
+          "type": {
+            "fill": {
+              "solid": { "color": true }
+            }
+          }
+        },
+        "applyToLabels": {
+          "displayName": "Apply same color to data labels",
+          "type": { "bool": true }
+        }
+      }
+    },
+    "targetMarker": {
+      "displayName": "Target Marker",
+      "properties": {
+        "color": {
+          "displayName": "Marker Color",
+          "type": {
+            "fill": {
+              "solid": { "color": true }
+            }
+          }
+        },
+        "thickness": {
+          "displayName": "Marker Thickness",
+          "type": { "numeric": true }
+        }
+      }
+    }
+  }
+}

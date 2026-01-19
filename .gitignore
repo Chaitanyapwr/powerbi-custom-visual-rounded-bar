@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.pbiviz
+*.pfx
+*.pem
+.cache/
+.vscode/
+.tmp/
+webpack.statistics.dev.html
+webpack.statistics.prod.html
